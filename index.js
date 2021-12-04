@@ -47,20 +47,16 @@ function compareWords(wrd1, wrd2) {
 }
 
 function startTest() {
-  startTime = new Date();
   textarea.disabled = false;
   button.innerText = "stop";
   const idx = Math.floor(Math.random() * 3);
   test = typingTests[idx];
-  console.log(test);
   message.innerText = "NOW TYPE THIS: " + test;
 }
 
 function stopTest() {
-  const endTime = new Date();
   const typedString = textarea.value;
   const words = test.split(" ").length;
-  console.log(words);
   const finalScore = compareStrings(typedString, test);
   test = "";
   message.innerText = "you got " + finalScore + " right out of " + words;
